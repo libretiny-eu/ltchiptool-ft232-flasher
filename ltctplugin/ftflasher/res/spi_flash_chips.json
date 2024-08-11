@@ -3667,6 +3667,20 @@
 				"FEAT_CHIPERASE"
 			]
 		},
+		"eb6014": {
+          		"vendor": "TSINGTENG Microsystem",
+            		"name": "TH25Q-80UA",
+            		"size": 1048576,
+            		"page_size": 256,
+            		"status_lock": [
+                		"WRSR_WREN"
+            		],
+            		"unlock": "BP4_SRWD",
+            		"features": [
+                		"FEAT_SECTERASE",
+                		"FEAT_CHIPERASE"
+            		]
+        	},
 		"cd6014": {
 			"vendor": "TSINGTENG Microsystem",
 			"name": "TH25Q-80HB",
