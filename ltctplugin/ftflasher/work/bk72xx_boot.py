@@ -68,7 +68,7 @@ class Bk72xxBootThread(BaseThread):
 
             self.callback.on_message("Checking flash ID...")
             flash_id = SerialFlashManager.read_jedec_id(port)
-            if flash_id == b"\xFF\xFF\xFF":
+            if flash_id == b"\xff\xff\xff":
                 flash_id = b"\x00\x00\x00"
             if any(flash_id):
                 self._finalize(port, flash_id)
@@ -81,7 +81,7 @@ class Bk72xxBootThread(BaseThread):
                 gpio.write(cen_high)
 
                 self.callback.on_message("Entering download mode...")
-                tx = b"\xD2" * 64
+                tx = b"\xd2" * 64
                 rx = port.exchange(out=tx, readlen=len(tx), duplex=True)
                 debug(f"SPI RX: {rx.hex(' ')}")
                 if rx.count(0xD2) == 0:
@@ -91,7 +91,7 @@ class Bk72xxBootThread(BaseThread):
                     self.callback.on_message(f"Checking flash ID ({i + 1})...")
                     sleep(0.2)
                     flash_id = SerialFlashManager.read_jedec_id(port)
-                    if flash_id == b"\xFF\xFF\xFF":
+                    if flash_id == b"\xff\xff\xff":
                         flash_id = b"\x00\x00\x00"
                     debug(f"Flash ID {i + 1}: {flash_id.hex(' ')}")
                     if any(flash_id):

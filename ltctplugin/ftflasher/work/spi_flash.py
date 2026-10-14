@@ -85,7 +85,7 @@ class SpiFlashThread(BaseThread):
 
             self.callback.on_message("Checking flash ID...")
             flash_id = SerialFlashManager.read_jedec_id(self.port)
-            if flash_id == b"\xFF\xFF\xFF":
+            if flash_id == b"\xff\xff\xff":
                 flash_id = b"\x00\x00\x00"
             if not any(flash_id):
                 raise RuntimeError("No serial flash detected")

@@ -16,9 +16,9 @@ pyftdi-bitbang = "^1.0.0"
 pyspiflash = "^0.6.3"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-isort = "^5.12.0"
-autoflake = "^2.1.1"
+black = "^26.10.1"
+isort = "^9.0.2"
+autoflake = "^2.4.0"
 
 [build-system]
 requires = ["poetry-core"]
